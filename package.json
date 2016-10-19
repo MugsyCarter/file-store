@@ -1,0 +1,34 @@
+{
+  "name": "file-store",
+  "version": "1.0.0",
+  "description": "Mugsy's class 3 assignoment for code 401.  He worked with Nathan and Tim.",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "pretest": "npm run lint",
+    "test": "mocha test",
+    "lint": "eslint .",
+    "watch": "mocha test --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MugsyCarter/file-store.git"
+  },
+  "author": "Mugsy Carter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MugsyCarter/file-store/issues"
+  },
+  "homepage": "https://github.com/MugsyCarter/file-store#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.8.1",
+    "mocha": "^3.1.2"
+  },
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "rm-rf": "^2.0.1"
+  }
+}
