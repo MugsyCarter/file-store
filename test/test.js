@@ -39,15 +39,16 @@ const elements = [
 
 describe('adding and removing files', function(){
   before(function(done){
-  rimraf('../data/elements', done);
+  rimraf((__dirname).slice(0,-5) + '/data/elements', done);
   console.log('deleted');
-})
+});
  
 
     it('creates a new directory', function(done){
      function test() {
        console.log('test 1 running');
-      assert.ok(fs.existsSync('../data/elements'));
+       console.log('here is the directory', (__dirname).slice(0,-5) + '/data/elements');
+      assert.ok(fs.existsSync((__dirname).slice(0,-5) + '/data/elements','../data/elements'));
        done();
       };
     store.saveFile(elements, 'elements', test);
