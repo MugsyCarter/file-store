@@ -1,4 +1,5 @@
 const store = require('../lib/store');
+const get = require('../lib/get');
 const assert = require('assert');
 const fs = require('fs');
 
@@ -24,29 +25,36 @@ const elements = [
 ];
 
 describe('store.saveFile', function(){
+
     it('creates a new directory', function(done){
      store.saveFile(elements, 'elements', storeTest);
       assert.ok(fs.existsSync('../data/elements'));
       done();
     });  
   
-  // it.('creates JSON files in the directory', done => {
+  // it('creates JSON files in the directory', done => {
 
   //   const callback = (err) => {
   // });
 
-  // it.('creates the correct number of files', done => {
-
-  //   const callback = (err) => {
-  // });
-
-
-
-
+ it('creates JSON files in the directory whose contents are equal to the original content when parsed', function(){
+   var finalObj = get.mergeAllFiles('elements');
+   console.log(finalObj);
+   console.log("elements is ", elements);
+  assert.deepEqual(elements, get.mergeAllFiles('elements'));
+      done();
+    });
+});
 });
 
 function storeTest(){
-  console.log('Fart, error is ');
+  console.log('Error is ');
 };
 
+//function call
+get.mergeAllFiles('elements', myCallback);
 
+//callback function
+function myCallback(){
+    console.log('Call Back, Please.')
+};
